@@ -1,0 +1,14 @@
+{
+  "name": "uploador",
+  "version": "0.0.0",
+  "main": "uploador.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery-file-upload": "*",
+    "jquery-ui-touch-punch": "*"
+  }
+}

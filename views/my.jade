@@ -1,0 +1,60 @@
+extends _layout
+block content
+  .container
+    .row-fluid
+      .span12
+        if url
+          .well 正在贴图至：
+            i.icon-quote-left.icon-muted.icon-4x.pull-left
+            p #{title} (
+              a(href=url)=url
+              |)
+        form(action="https://upload.api.weibo.com/2/statuses/upload.json",enctype="multipart/form-data",method='post')
+          #fileupload.clearfix
+            .uploader
+              .label.label-info 上传新图片:
+              input#visible(type='hidden',name='visible',value='0')
+              input(type='hidden',name='access_token',value=access_token)
+              input#status(type='hidden',name='status')
+              input(type="file",name="pic")
+              .tip 注：支持jpg,png,gif格式；
+              .alert.alert-success
+                p
+                  h3
+                    i.icon-ok
+                    |上传完毕！
+                .btn-tools
+                  .btn-group
+                    a.btn.btn-finish.btn-primary(href='#') 
+                      i.icon-ok
+                      |就使用这张图片
+                  .btn-group
+                    a.btn-reupload.btn(href='#') 
+                      i.icon-reply
+                      |继续上传
+
+            .processing
+              i.icon-food.icon-4x.pull-left.icon-border.icon-spin
+              h3.message
+              .progress.progress-striped.active
+                .bar(style='width:100%;')
+            .pics
+              .label.label-info 微博上的图片:
+              .btn-tools
+                .btn-group
+                  button.btn.btn-success.btn-finish(type='button')
+                    i.icon-ok
+                    |使用选中的
+                    span.num.badge.badge-info
+                    |张图片
+              .images
+    link(href='http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/themes/blitzer/jquery-ui.css',rel='stylesheet')
+    script(src="/jquery-file-upload/js/vendor/jquery.ui.widget.js")
+    script(src="/jquery-file-upload/js/jquery.iframe-transport.js")
+    script(src='http://upcdn.b0.upaiyun.com/libs/jqueryui/jquery.ui-1.10.2.min.js')
+    script(src='/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')
+    script
+      window.uploadorUrl = !{JSON.stringify(url||'')};
+      window.uploadorTitle = !{JSON.stringify(title||'')};
+    script(src="/jquery-file-upload/js/jquery.fileupload.js")
+    script(src='/uploador.js')

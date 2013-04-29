@@ -1,0 +1,81 @@
+extends _layout
+block content
+  :stylus
+    body
+      padding 0!important;
+  .landing
+    section
+      .container
+        .row-fluid
+          .span8
+            h1 马上上传
+            p 还在给你的社区折腾贴图上传功能吗？咱帮你搞定了
+          .span4
+            .troll
+              a(href='#',onclick='return false;')
+                img(src='/troll.png')
+    section#setup
+      .container
+        .row-fluid
+          .span5
+            h2 快速安装
+            p 只需要在客户端引入一个js脚本，然后在你需要上传贴图的时候调用一个函数即可.
+            p 没有格式束缚， 你可以放心使用你的markdown、html或者是直接链接，和WYSIWYG编辑器永远说拜拜。
+          .span7
+            iframe(width="100%",height="300",src="http://jsfiddle.net/layerssss/K5Yfh/embedded/js,html,result/",allowfullscreen="allowfullscreen",frameborder="0")
+            
+    section
+      .container
+        .row-fluid
+          .span7
+            h2 传播你的社区
+            p 在贴图的过程中，社区的内容能够通过微博被传播，从而吸引潜在的社区成员。
+          .span5
+            img(src='http://placehold.it/500x400')
+    section
+      .container
+        .row-fluid
+          .span7
+            h2 便捷快速的贴图流程
+            p 仅需要两步，用户便可以完成贴图步骤。
+          .span5
+            img(src='http://placehold.it/500x400')
+    section
+      .container
+        .row-fluid
+          .span7
+            h2 良好的移动WEB体验
+            p 支持IOS和Android设备，能很好地为你的移动WEB社区服务。
+          .span5
+            img(src='http://placehold.it/500x400')
+    section
+      .container
+        .row-fluid
+          .span7
+            h2 马上开始使用
+            p 无需注册、申请，直接调用就行了！
+          .span5
+            .go
+              a.btn.btn-large.btn-primary.btn-go(href='#setup',onclick='$("html, body").animate({scrollTop:$("#setup").offset().top},"slow");return false;')
+                i.icon-fighter-jet 
+                |GO!
+
+
+    section
+      .container
+        .row-fluid
+          .span7
+            h2 关于
+            p “马上上传”是
+              a(href='https://github.com/layerssss/')
+                img.img-rounded(src='http://www.gravatar.com/avatar/eb1ac1d8cb535a982c024c214f8a1802?s=25')
+                |Michael Yin
+              |使用
+              a(href='') 许多来自社区的资源
+              |创造的，它的源代码存放在
+              a(href='https://github.com/layerssss/uploador/') Github之上
+              |，所以，你可以尽情地改进它，让它能更好地为社区服务。
+          .span5
+            i.icon-food.icon-spin
+  script(src='/plugin.js')
+  script(src='/script.js')

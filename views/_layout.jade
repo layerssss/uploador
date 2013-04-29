@@ -1,0 +1,21 @@
+extends _html
+block body
+  header.clearfix
+    .container
+      a(href='/',target='_blank')
+        i.icon-food.logo
+        .banner 马上上传
+          span.beta beta
+      .pull-right
+        if typeof(user)!='undefined'
+          img.avatar.img-circle(src=user.avatar_large)
+          a.btn.signout(href='/my/signout') 
+            i.icon-signout
+            |登出
+  block content
+  footer
+    .container 
+      block footer
+        |powered by
+        a(href='http://uploador.micy.in/',target='_blank') 马上上传 
+        |#{version}

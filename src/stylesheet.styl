@@ -1,0 +1,176 @@
+@import 'nib'
+header
+  padding 0.2em
+  font-size 1.5em
+  .avatar
+    width 1.5em
+    vertical-align top
+    margin 0 0.5em
+  a,a:hover
+    text-decoration none
+    color inherit
+    .logo
+      float left
+      margin 0.5em 0.6em 0 2em
+    .banner
+      float left
+      font-size 0.8em
+      margin-top 0.7em
+      .beta
+        font-size 0.7em
+        margin-left 0.3em
+        color #aaa
+footer
+  background-color #eee
+  border-top solid 1px #ddd
+  padding 1em
+  font-size 0.7em
+body
+  font-family: arial, sans-serif
+
+// 上传页面
+#fileupload
+  background-color #eee
+  border solid 1px #ddd
+  border-radius 0.5em
+  padding 0.5em
+  .processing
+    margin 3em 1em
+    display none
+  .uploader
+    .alert
+      display none
+    .label
+      position absolute
+      top 0.5em
+      left 0.5em
+    position relative
+    margin-bottom 1em
+    padding 1em
+    input[type='file']
+      cursor pointer
+      -webkit-appearance: none
+      box-sizing: border-box;
+      height 1.5em
+      &::-webkit-file-upload-button
+        width: 0
+        padding: 0
+        margin: 0
+        -webkit-appearance: none
+        border: none
+      border solid 1px #ccc
+      border-radius 0.5em
+      padding 2em
+      display block
+      width 100%
+      &:hover
+        background-color #ddd
+      &::after
+        content '可以将文件拖拽至此框内'
+    .tip
+      font-size 0.8em
+  .pics
+    padding 0 1em
+    .label
+      position absolute
+      top -0.5em
+      left 0.5em
+    position relative
+    .btn-tools
+      position absolute
+      right 1em
+      top -1.5em
+    >.images
+      border solid 1px #ccc
+      border-radius 0.5em
+      cursor crosshair
+      padding .3em
+      img
+        width 5em
+        margin 0.1em
+        vertical-align top
+        opacity 0.3
+        &.ui-selected,&:hover,&.ui-selecting
+          opacity 1
+          border solid 1px #999
+        &.ui-selected
+          animation blink 0.4s linear 0s infinite alternate
+@keyframes blink 
+  from 
+    border-color #333
+  to 
+    border-color #eee
+
+// 登陆页面
+.last-step
+  margin-bottom 0
+.weibo-login
+  padding 2em 1em
+  border-right solid 1px #eee
+  float left
+  margin-right 1em
+
+// 首页
+.landing
+  .troll
+    text-align center
+    img
+      max-height 200px
+    a:hover
+      opacity .7
+  .go 
+    clear both
+    height 6em
+    .btn 
+      i::before
+        transform rotate(-90deg) 
+      transform scale(2)
+      transform-origin 0 0
+      
+  section
+    a:not(.btn)
+      color inherit
+      text-decoration underline
+      margin 0.2em
+      opacity .85
+    color #333
+    padding 1.5em .5em
+    .container
+      max-width 1000px
+      .row-fluid
+        >:first-child
+          padding 2em
+        >:last-child
+          overflow hidden
+          padding 1em 0
+          >i
+            font-size 10em
+            margin-left 0.5em
+          >span
+            font-size 3em
+    &:nth-child(2n)
+      color #ffe
+      .row-fluid>:first-child
+        float right
+        text-align right
+
+    @base1 #4C89AE
+    @amount -70
+    @base2 spin(@base1, @amount)
+    @base3 spin(@base2, @amount)
+    @base4 spin(@base3, @amount)
+    @base5 spin(@base4, @amount)
+    &:nth-child(2)
+      background-color: @base1
+    &:nth-child(3)
+      background-color lighten(@base1, 80%)
+    &:nth-child(4)
+      background-color @base2
+    &:nth-child(5)
+      background-color lighten(@base2, 80%)
+    &:nth-child(6)
+      background-color @base3
+    &:nth-child(7)
+      background-color lighten(@base3, 80%)
+    &:nth-child(8)
+      background-color @base4

@@ -1,0 +1,12 @@
+extends _layout
+block content 
+  .container
+    .page-header.last-step
+    .weibo-login
+      a(href='/oauth')
+        img(src='http://www.sinaimg.cn/blog/developer/wiki/48.png')
+    div
+      h4 上图！
+      |使用你的新浪微博账号在
+      a(href=url,target='_blank')=title
+      |上传图片。
